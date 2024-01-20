@@ -131,3 +131,33 @@ export const getCategories = async () => {
 
   return results.categories;
 }
+
+export const submitComment = async (obj) => {
+  try {
+    const result = await fetch('/api/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    });
+
+    console.log('aaaa', result, obj);
+
+    // Check if the response status is OK (200)
+    if (!result.ok) {
+      // If not OK, throw an error with the response details
+      console.log(result);
+      // const errorDetails = await result.json();
+      // console.log('baspa: ', errorDetails);
+      // throw new Error(`Error: ${result.status} - ${result.statusText}\n${JSON.stringify(errorDetails)}`);
+    }
+
+    // If the response is OK, parse and return the JSON
+    // return result.json();
+  } catch (error) {
+    // Handle fetch errors
+    console.error('Fetch Error:', error);
+    throw error; // Propagate the error for further handling
+  }
+};

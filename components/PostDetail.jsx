@@ -19,6 +19,15 @@ const PostDetail = ( {post} ) => {
         modifiedText = (<u key={index}>{text}</u>);
       }
     }
+      // styling aanpassen
+    if (obj.type === 'link') {
+      return (
+          <a key={index} className="text-md font-semibold mb-4 cursor-pointer" href={obj.href} target="_blank">
+              {obj.children[0].text}
+          </a>
+      );
+  }
+  
 
     switch (type) {
       case 'heading-three':
@@ -38,29 +47,27 @@ const PostDetail = ( {post} ) => {
           />
         );
 
-        // need baspa help!!!!
-        // case 'bulleted-list':
-        //   return (
-        //     <ul key={index} className="mb-8">
-        //       {modifiedText.map((listItem, i) => (
-        //         <li key={i} className="list-item-child">
-        //           {listItem.children.map((child, childIndex) => (
-        //             <React.Fragment key={childIndex}>
-        //               {child.children.map((textItem, textIndex) => (
-        //                 <React.Fragment key={textIndex}>
-        //                   {textItem.text}
-        //                 </React.Fragment>
-        //               ))}
-        //             </React.Fragment>
-        //           ))}
-        //         </li>
-        //       ))}
-        //     </ul>
-        //   );
-        
-        
-        // case 'link':
-        // return <link key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</link>;
+        case 'bulleted-list':
+          return (
+            <ul key={index} className="mb-8">
+              {obj.children && obj.children.map((listItem, i) => (
+                <li key={i} className="list-item-child list-disc ml-8">
+                  {listItem.children && listItem.children.map((child, childIndex) => (
+                    <React.Fragment key={childIndex}>
+                      {child.children && child.children.map((textItem, textIndex) => (
+                        <React.Fragment key={textIndex}>
+                          {textItem.text}
+                        </React.Fragment>
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </li>
+              ))}
+            </ul>
+          );
+      
+        case 'link':
+        return <link key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</link>;
         
       default:
         return modifiedText;
