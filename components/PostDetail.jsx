@@ -22,7 +22,7 @@ const PostDetail = ( {post} ) => {
       // styling aanpassen
     if (obj.type === 'link') {
       return (
-          <a key={index} className="text-md font-semibold mb-4 cursor-pointer" href={obj.href} target="_blank">
+          <a key={index} className="text-md font-semibold mb-4 cursor-pointer text-purple-700 hover:underline" href={obj.href} target="_blank" rel="noopener noreferrer">
               {obj.children[0].text}
           </a>
       );
