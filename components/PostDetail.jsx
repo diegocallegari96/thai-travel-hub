@@ -19,7 +19,7 @@ const PostDetail = ( {post} ) => {
         modifiedText = (<u key={index}>{text}</u>);
       }
     }
-      // styling aanpassen
+      
     if (obj.type === 'link') {
       return (
           <a key={index} className="text-md font-semibold mb-4 cursor-pointer text-purple-700 hover:underline" href={obj.href} target="_blank" rel="noopener noreferrer">
@@ -44,6 +44,7 @@ const PostDetail = ( {post} ) => {
             height={obj.height}
             width={obj.width}
             src={obj.src}
+            className='pb-4'
           />
         );
 
