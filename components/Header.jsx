@@ -21,6 +21,14 @@ const Header = () => {
             .then((newCategories) => setCategories(newCategories))
     }, []);
 
+    useEffect(() => {
+        if (nav) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [nav]);
+
 
 
   return (
@@ -60,8 +68,8 @@ const Header = () => {
             {/* hamburger menu */}
 <             div className={!nav ? 'hidden' : 'fixed top-0 left-0 w-full h-full bg-menuImage flex flex-col justify-center items-center z-10'}>
                     {[...categories].reverse().map((category) => (
-                    <Link className='pb-12' onClick={handleClickk} key={category.slug} href={`/category/${category.slug}`}>
-                        <span className=' pb-8 text-4xl align-middle text-white font-semibold cursor-pointer'>
+                    <Link className='pb-14' onClick={handleClickk} key={category.slug} href={`/category/${category.slug}`}>
+                        <span className=' text-4xl align-middle bg-gray-900 bg-opacity-50 p-2 rounded-lg text-white font-bold cursor-pointer'>
                             {category.name}
                         </span>
                     </Link>
