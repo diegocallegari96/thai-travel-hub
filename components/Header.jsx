@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { getCategories } from '../services'
 import Head from 'next/head'
+import Script from 'next/script'
 
 
 
@@ -29,6 +30,7 @@ const Header = () => {
             <title>Thai Travel Hub</title>
             <link rel='icon' href='/thaihubicowit.svg'/>
             <meta name="agd-partner-manual-verification" />
+            <Script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></Script>
          </Head>
         <div className='border-b w-full inline-block border-white py-8'>
             <div className='md:float-left block'>
