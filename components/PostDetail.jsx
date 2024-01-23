@@ -26,7 +26,8 @@ const PostDetail = ( {post} ) => {
               {obj.children[0].text}
           </a>
       );
-  }
+    }
+
   
 
     switch (type) {
