@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getCategories } from '../services'
 import Head from 'next/head'
 import Script from 'next/script'
+import {FaBars, FaTimes} from 'react-icons/fa'
 
 
 
@@ -53,19 +54,19 @@ const Header = () => {
                 ))}
             </div>
             {/* hamburger */}
-            {/* <div onClick={handleClickk} className='md:hidden z-10 absolute top-0 right-0'>
-                {!nav ? <FontAwesomeIcon className='m-12' icon={faBars} style={{color: "#ffffff",}} /> : <FontAwesomeIcon className='m-12' icon={faXmark} style={{color: "#ffffff",}} />}
-            </div> */}
+            <div onClick={handleClickk} className='md:hidden z-50 absolute top-0 right-0'>
+                {!nav ? <FaBars className='m-12' color='white' size={'25'} /> : <FaTimes className='m-12' color='white' size={'25'} />}
+            </div>
             {/* hamburger menu */}
-{/* <             div className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center z-50'}>
+<             div className={!nav ? 'hidden' : 'fixed top-0 left-0 w-full h-full bg-menuImage flex flex-col justify-center items-center z-10'}>
                     {[...categories].reverse().map((category) => (
-                    <Link key={category.slug} href={`/category/${category.slug}`}>
-                        <span className=' mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
+                    <Link className='pb-12' onClick={handleClickk} key={category.slug} href={`/category/${category.slug}`}>
+                        <span className=' pb-8 text-4xl align-middle text-white font-semibold cursor-pointer'>
                             {category.name}
                         </span>
                     </Link>
                 ))}
-            </div> */}
+            </div>
         </div>
     </div>
   );
