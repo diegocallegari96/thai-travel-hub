@@ -66,7 +66,7 @@ const Header = () => {
                 ))}
             </div>
             {/* hamburger */}
-            <div onClick={handleClickk} className='md:hidden z-20 absolute top-0 right-0'>
+            <div onClick={handleClickk} className='md:hidden z-30 absolute top-0 right-0'>
                 {!nav ? <FaBars className='m-12' color='white' size={'25'} /> : <FaTimes className='m-12' color='white' size={'25'} />}
             </div>
             {/* hamburger menu */}
