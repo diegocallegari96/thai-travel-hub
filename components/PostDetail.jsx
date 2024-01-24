@@ -85,6 +85,26 @@ const PostDetail = ( {post} ) => {
               ))}
             </ul>
           );
+
+          // not working..... (numbered list) (numbered list: bold) (numbered list: bold - link) (bulleted list: bold) (buletted list: bold - link)
+          // case 'numbered-list':
+          //   return (
+          //     <ol key={index} className="mb-8">
+          //       {obj.children && obj.children.map((listItem, i) => (
+          //         <li key={i} className="list-item-child list-disc ml-8">
+          //           {listItem.children && listItem.children.map((child, childIndex) => (
+          //             <React.Fragment key={childIndex}>
+          //               {child.children && child.children.map((textItem, textIndex) => (
+          //                 <React.Fragment key={textIndex}>
+          //                   {textItem.text}
+          //                 </React.Fragment>
+          //               ))}
+          //             </React.Fragment>
+          //           ))}
+          //         </li>
+          //       ))}
+          //     </ol>
+          //   );  
       
         case 'link':
         return <link key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</link>;
@@ -105,7 +125,7 @@ const PostDetail = ( {post} ) => {
       </div>
       <div className='px-4 lg:px-0'>
         <div className='flex items-center justify-between mb-8 w-full'>
-        <div className='flex items-center mb-4 lg:mb-0 lg:w-auto mr-8'>
+        {/* <div className='flex items-center mb-4 lg:mb-0 lg:w-auto mr-8'>
           <img 
           alt={post.author.name}
           height='30px'
@@ -114,7 +134,7 @@ const PostDetail = ( {post} ) => {
           src={post.author.photo.url}
           />
           <p className='inline align-middle text-gray-700 ml-2 text-lg'>{post.author.name}</p>
-        </div>
+        </div> */}
         <div className='font-medium text-gray-700 mb-4 lg:mb-0 lg:w-auto'>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline mr-2 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
