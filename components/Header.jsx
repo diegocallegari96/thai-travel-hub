@@ -46,7 +46,7 @@ const Header = () => {
             <Script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></Script>
          </Head>
         <div className='border-b w-full inline-block border-white py-8'>
-            <div className='md:float-left block'>
+            <div className='md:float-left block z-20'>
                 <Link href='/'>
                 <div  className='flex items-center' >
                 <img className='cursor-pointer' src='/thaihubicowit.svg' alt="Logo image" style={{width: '60px'}}/>
@@ -66,11 +66,11 @@ const Header = () => {
                 ))}
             </div>
             {/* hamburger */}
-            <div onClick={handleClickk} className='md:hidden z-30 absolute top-0 right-0'>
+            <div onClick={handleClickk} className='md:hidden z-20 absolute top-0 right-0'>
                 {!nav ? <FaBars className='m-12' color='white' size={'25'} /> : <FaTimes className='m-12' color='white' size={'25'} />}
             </div>
             {/* hamburger menu */}
-<             div className={!nav ? 'hidden' : 'fixed top-0 left-0 w-full h-full bg-menuImage flex flex-col justify-center items-center z-20'}>
+<             div className={!nav ? 'hidden' : 'fixed top-0 left-0 w-full h-full bg-menuImage flex flex-col justify-center items-center z-10'}>
                     {[...categories].reverse().map((category) => (
                     <Link className='pb-14' onClick={handleClickk} key={category.slug} href={`/category/${category.slug}`}>
                         <span className=' text-4xl align-middle bg-gray-900 bg-opacity-45 p-2 rounded-lg text-white font-bold cursor-pointer'>

@@ -56,6 +56,16 @@ const PostDetail = ( {post} ) => {
             className='pb-4'
           />
         );
+        case 'iframe':
+        return (
+          <iframe
+            key={index}
+            height={obj.height}
+            width={obj.width}
+            src={obj.url}
+            className='pb-4'
+          />
+        );
 
         case 'bulleted-list':
           return (
