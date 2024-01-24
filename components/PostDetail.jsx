@@ -63,7 +63,7 @@ const PostDetail = ( {post} ) => {
             height={obj.height}
             width={obj.width}
             src={obj.url}
-            className='pb-4'
+            className='pb-4 sm:width-250'
           />
         );
 
