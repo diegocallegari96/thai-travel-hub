@@ -39,7 +39,7 @@ const Header = () => {
             <title>Thai Travel Hub</title>
             <link rel='icon' href='/thaihubicowit.svg'/>
             <meta name="agd-partner-manual-verification" />
-            <meta name="description" content="See Thailand as never before" />
+            <meta name="description" content="See Thailand as never before" key="desc" />
             <meta property="og:title" content="Thai Travel Hub" />
             <meta property="og:description" content="What are you waiting for?" />
             <meta property="og:url" content="https://thaitravelhub.com/" />
