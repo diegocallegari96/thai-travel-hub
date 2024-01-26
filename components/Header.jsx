@@ -39,11 +39,6 @@ const Header = () => {
             <title>Thai Travel Hub</title>
             <link rel='icon' href='/thaihubicowit.svg'/>
             <meta name="agd-partner-manual-verification" />
-            <meta name="description" content="See Thailand as never before" key="desc" />
-            <meta property="og:title" content="Thai Travel Hub" />
-            <meta property="og:description" content="What are you waiting for?" />
-            <meta property="og:url" content="https://thaitravelhub.com/" />
-            <meta property="og:image" content="/thaihubicozwart.png" />
             <Script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></Script>
          </Head>
         <div className='border-b w-full inline-block border-white py-8'>

@@ -87,6 +87,7 @@ const PostDetail = ( {post} ) => {
           );
 
           // not working..... (numbered list) (numbered list: bold) (numbered list: bold - link) (bulleted list: bold) (buletted list: bold - link)
+          // widgets?!?
           // case 'numbered-list':
           //   return (
           //     <ol key={index} className="mb-8">
