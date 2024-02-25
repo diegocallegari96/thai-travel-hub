@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "../components";
 import Head from "next/head";
 import Script from "next/script";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as Fathom from "fathom-client";
 
@@ -20,7 +19,7 @@ export default function App({ Component, pageProps }) {
     Fathom.load("KDYBLCAH", {
       includedDomains: ["thaitraveulhub.com"],
     });
-    
+
     function onRouteChangeComplete() {
       Fathom.trackPageview();
     }
