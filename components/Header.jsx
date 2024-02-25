@@ -39,7 +39,7 @@ const Header = () => {
             <title>Thai Travel Hub</title>
             <link rel='icon' href='/thaihubicowit.svg'/>
             <meta name="agd-partner-manual-verification" />
-            <Script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></Script>
+            <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></script>
          </Head>
         <div className='border-b w-full inline-block border-white py-8'>
             <div className='md:float-left block z-30'>
