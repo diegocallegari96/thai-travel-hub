@@ -66,7 +66,7 @@ const Header = () => {
                 {!nav ? <FaBars className='m-12' color='white' size={'25'} /> : <FaTimes className='m-12' color='white' size={'25'} />}
             </div>
             {/* hamburger menu */}
-<             div className={!nav ? 'hidden' : 'fixed top-0 left-0 w-full h-full bg-menuImage flex flex-col justify-center items-center z-10'}>
+<             div className={!nav ? 'hidden' : 'fixed top-0 left-0 w-full h-full bg-menuImage flex flex-col justify-center items-center z-10'} style={{ backgroundSize: 'cover' }}>
                     {[...categories].map((category) => (
                     <Link className='pb-14' onClick={handleClickk} key={category.slug} href={`/category/${category.slug}`}>
                         <span className=' text-4xl align-middle bg-gray-900 bg-opacity-45 p-2 rounded-lg text-white font-bold cursor-pointer'>
