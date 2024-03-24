@@ -1,10 +1,25 @@
 import React from 'react'
 import moment from 'moment'
 import Link from 'next/link'
+import logoImg from '../public/thaihubicowit.svg'
 
 const PostCard = ({ post }) => {
   return (
     <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
+      <Head>
+                <title>{post.title}</title>
+                <meta name='description' content={post.excerpt}/>
+                {/* Open Graph meta tags */}
+                <meta property="og:title" content={post.title} />
+                <meta property="og:description" content={post.excerpt} />
+                <meta property="og:image" content={logoImg} /> {/* Include the logo */}
+                <meta property="og:url" content={`https://thaitravelhub.com/post/${post.slug}`} />
+                {/* Twitter Card meta tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={post.title} />
+                <meta name="twitter:description" content={post.excerpt} />
+                <meta name="twitter:image" content={logoImg} /> {/* Include the logo */}
+      </Head>
       <div className='relative overflow-hidden shadow-md pb-80 mb-6'>
         <img 
           src={post.featuredImage.url}
