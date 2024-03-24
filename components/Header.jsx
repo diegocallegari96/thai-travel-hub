@@ -37,18 +37,27 @@ const Header = ({ post }) => {
     
     <div className='container mx-auto px-10 mb-8'>
         <Head>
-                <title>{post?.title}</title>
-                <meta name='description' content={post?.excerpt}/>
-                
-                <meta property="og:title" content={post?.title} />
-                <meta property="og:description" content={post?.excerpt} />
-                <meta property="og:image" content={logoImg} /> 
-                <meta property="og:url" content={`https://thaitravelhub.com/post/${post?.slug}`} />
-                
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={post?.title} />
-                <meta name="twitter:description" content={post?.excerpt} />
-                <meta name="twitter:image" content={logoImg} /> 
+        <title>{post?.title}</title>
+                <meta name='description' 
+                      content={post?.excerpt || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
+                {/* Open Graph */}
+                <meta property="og:title" 
+                      content={post?.title} />
+                <meta property="og:description" 
+                      content={post?.excerpt} />
+                <meta property="og:image" 
+                      content={logoImg} /> 
+                <meta property="og:url" 
+                      content={`https://thaitravelhub.com/post/${post?.slug}`} />
+                {/* Twitter */}      
+                <meta name="twitter:card" 
+                      content={logoImg} />
+                <meta name="twitter:title" 
+                      content={post?.title} />
+                <meta name="twitter:description" 
+                      content={post?.excerpt} />
+                <meta name="twitter:image" 
+                      content={logoImg} />          
             <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></script>
          </Head>
         <div className='border-b w-full inline-block border-white py-8'>
