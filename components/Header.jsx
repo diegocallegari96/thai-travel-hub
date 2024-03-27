@@ -4,12 +4,6 @@ import { getCategories } from '../services'
 import Head from 'next/head'
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-
-
-
-
-
-
 const Header = ({ post }) => {
     const [categories, setCategories] = useState([]);
     const [nav, setNav] = useState(false)
@@ -28,13 +22,7 @@ const Header = ({ post }) => {
         }
     }, [nav]);
 
-    console.log(post);
-
-
-
   return (
-    
-    
     <div className='container mx-auto px-10 mb-8'>
         <Head post={post}>
         <title>{post?.title}</title>
