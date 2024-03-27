@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
     //  - This must be an exact match of your domain.
     //  - If you're using www. for your domain, make sure you include that here.
     Fathom.load("KDYBLCAH", {
-      includedDomains: ["thaitraveulhub.com"],
+      includedDomains: ["thaitravelhub.com"],
     });
 
     function onRouteChangeComplete() {
