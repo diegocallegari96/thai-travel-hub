@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { getCategories } from '../services'
 import Head from 'next/head'
-import Script from 'next/script'
-import {FaBars, FaTimes} from 'react-icons/fa'
-import logoImg from '../public/thaihubicowit.svg'
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 
 
@@ -30,13 +28,15 @@ const Header = ({ post }) => {
         }
     }, [nav]);
 
+    console.log(post);
+
 
 
   return (
     
     
     <div className='container mx-auto px-10 mb-8'>
-        <Head>
+        <Head post={post}>
         <title>{post?.title}</title>
                 <meta name='description' 
                       content={post?.excerpt || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
@@ -46,18 +46,18 @@ const Header = ({ post }) => {
                 <meta property="og:description" 
                       content={post?.excerpt} />
                 <meta property="og:image" 
-                      content={logoImg} /> 
+                      content={post?.featuredImage.url} /> 
                 <meta property="og:url" 
                       content={`https://thaitravelhub.com/post/${post?.slug}`} />
                 {/* Twitter */}      
                 <meta name="twitter:card" 
-                      content={logoImg} />
+                      content={post?.featuredImage.url} />
                 <meta name="twitter:title" 
                       content={post?.title} />
                 <meta name="twitter:description" 
                       content={post?.excerpt} />
                 <meta name="twitter:image" 
-                      content={logoImg} />          
+                      content={post?.featuredImage.url} />          
             <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></script>
          </Head>
         <div className='border-b w-full inline-block border-white py-8'>

@@ -4,32 +4,11 @@ import Link from 'next/link'
 import Head from 'next/head'
 import logoImg from '../public/thaihubicowit.svg'
 
+
 const PostCard = ({ post }) => {
+  console.log(post);
   return (
     <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
-      <Head>
-                <title>{post.title}</title>
-                <meta name='description' 
-                      content={post?.excerpt || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
-                {/* Open Graph */}
-                <meta property="og:title" 
-                      content={post.title} />
-                <meta property="og:description" 
-                      content={post?.excerpt} />
-                <meta property="og:image" 
-                      content={logoImg} /> 
-                <meta property="og:url" 
-                      content={`https://thaitravelhub.com/post/${post.slug}`} />
-                {/* Twitter */}      
-                <meta name="twitter:card" 
-                      content={logoImg} />
-                <meta name="twitter:title" 
-                      content={post.title} />
-                <meta name="twitter:description" 
-                      content={post?.excerpt} />
-                <meta name="twitter:image" 
-                      content={logoImg} />
-      </Head>
       <div className='relative overflow-hidden shadow-md pb-80 mb-6'>
         <img 
           src={post.featuredImage.url}

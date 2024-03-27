@@ -1,10 +1,10 @@
 import React from 'react'
 import { Header } from '.'
 
-const Layout = ({children}) => {
+const Layout = ({children, post}) => {
   return (
         <>
-            <Header />
+            <Header post={post} />
             {children}
         </>
   )

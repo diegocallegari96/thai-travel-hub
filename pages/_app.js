@@ -7,7 +7,7 @@ import * as Fathom from "fathom-client";
 
 import "../styles/globals.scss";
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, post }) {
   const router = useRouter();
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
   return (
-    <Layout>
+    <Layout post={post}>
       <Component {...pageProps} />
     </Layout>
   );
