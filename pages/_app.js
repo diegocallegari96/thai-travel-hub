@@ -7,7 +7,7 @@ import * as Fathom from "fathom-client";
 
 import "../styles/globals.scss";
 
-export default function App({ Component, pageProps, post }) {
+export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
@@ -31,8 +31,9 @@ export default function App({ Component, pageProps, post }) {
       router.events.off("routeChangeComplete", onRouteChangeComplete);
     };
   }, []);
+
   return (
-    <Layout post={post}>
+    <Layout post={pageProps.post}>
       <Component {...pageProps} />
     </Layout>
   );
