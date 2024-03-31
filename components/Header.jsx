@@ -28,6 +28,7 @@ const Header = ({ post }) => {
         <title>{post?.title}</title>
                 <meta name='description' 
                       content={post?.excerpt || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
+                <link rel='icon' href='../public/thaihubicowit.svg' />
                 {/* Open Graph */}
                 <meta property="og:title" 
                       content={post?.title} />
