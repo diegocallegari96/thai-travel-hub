@@ -22,18 +22,19 @@ const Header = ({ post }) => {
         }
     }, [nav]);
 
+
   return (
     <div className='container mx-auto px-10 mb-8'>
         <Head post={post}>
         <title>{post?.title}</title>
                 <meta name='description' 
-                      content={post?.excerpt || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
+                      content={post?.description || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
                 <link rel='icon' href='../public/thaihubicowit.svg' />
                 {/* Open Graph */}
                 <meta property="og:title" 
                       content={post?.title} />
                 <meta property="og:description" 
-                      content={post?.excerpt} />
+                      content={post?.description} />
                 <meta property="og:image" 
                       content={post?.featuredImage.url} /> 
                 <meta property="og:url" 
@@ -44,7 +45,7 @@ const Header = ({ post }) => {
                 <meta name="twitter:title" 
                       content={post?.title} />
                 <meta name="twitter:description" 
-                      content={post?.excerpt} />
+                      content={post?.description} />
                 <meta name="twitter:image" 
                       content={post?.featuredImage.url} />          
             <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></script>

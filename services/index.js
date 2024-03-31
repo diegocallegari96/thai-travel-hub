@@ -21,6 +21,7 @@ export const getPosts = async () => {
             slug
             title
             excerpt
+            description
             featuredImage {
               url
             }
@@ -60,6 +61,7 @@ export const getPostDetails = async (slug) => {
       post(where: {slug: $slug}) {
         title
         excerpt
+        description
         featuredImage {
           url
         }
@@ -163,6 +165,7 @@ export const getCategoryPost = async (slug) => {
             slug
             title
             excerpt
+            description
             featuredImage {
               url
             }
