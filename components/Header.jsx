@@ -27,7 +27,7 @@ const Header = ({ post }) => {
     <div className='container mx-auto px-10 mb-8'>
         <Head post={post}>
         <title>{post?.title}</title>
-        <link rel='icon' href='../public/thaihubicowit.svg' />
+        <link rel='icon' href='/thaihubicowit.svg' />
                 <meta name='description' 
                       content={post?.description || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
                 {/* Open Graph */}
