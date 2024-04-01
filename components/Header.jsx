@@ -26,30 +26,30 @@ const Header = ({ post }) => {
   return (
     <div className='container mx-auto px-10 mb-8'>
         <Head post={post}>
-        <title>{post?.title}</title>
+        <title>{post?.title || "Discover Thailand's Wonders: Your Ultimate Guide"}</title>
         <link rel='icon' href='/thaihubicowit.svg' />
-                <meta name='description' 
-                      content={post?.description || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
-                {/* Open Graph */}
-                <meta property="og:title" 
-                      content={post?.title} />
-                <meta property="og:description" 
-                      content={post?.description} />
-                <meta property="og:image" 
-                      content={post?.featuredImage.url} /> 
-                <meta property="og:url" 
-                      content={`https://thaitravelhub.com/post/${post?.slug}`} />
-                {/* Twitter */}      
-                <meta name="twitter:card" 
-                      content={post?.featuredImage.url} />
-                <meta name="twitter:title" 
-                      content={post?.title} />
-                <meta name="twitter:description" 
-                      content={post?.description} />
-                <meta name="twitter:image" 
-                      content={post?.featuredImage.url} />          
-            <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></script>
-         </Head>
+        <meta name='description' 
+              content={post?.description || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
+        {/* Open Graph */}
+        <meta property="og:title" 
+              content={post?.title || "Discover Thailand's Wonders: Your Ultimate Guide"} />
+        <meta property="og:description" 
+              content={post?.description || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'} />
+        <meta property="og:image" 
+              content={post?.featuredImage.url || '/thaihubicowit.svg'} /> 
+        <meta property="og:url" 
+              content={`https://thaitravelhub.com/post/${post?.slug}` || `https://thaitravelhub.com/`} />
+        {/* Twitter */}      
+        <meta name="twitter:card" 
+              content={post?.featuredImage.url || '/thaihubicowit.svg'} />
+        <meta name="twitter:title" 
+              content={post?.title || "Discover Thailand's Wonders: Your Ultimate Guide"} />
+        <meta name="twitter:description" 
+              content={post?.description || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'} />
+        <meta name="twitter:image" 
+              content={post?.featuredImage.url || '/thaihubicowit.svg'} />          
+        <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1SPD11R"></script>
+        </Head>
         <div className='border-b w-full inline-block border-white py-8'>
             <div className='md:float-left block z-30'>
                 <Link href='/'>
@@ -75,8 +75,9 @@ const Header = ({ post }) => {
                 {!nav ? <FaBars className='m-12' color='white' size={'25'} /> : <FaTimes className='m-12' color='white' size={'25'} />}
             </div>
             {/* hamburger menu */}
-<             div className={!nav ? 'hidden' : 'fixed top-0 left-0 w-full h-full bg-menuImage flex flex-col justify-center items-center z-10'} style={{ backgroundSize: 'cover' }}>
-                    {[...categories].map((category) => (
+            <div className={!nav ? 'hidden' : 'fixed top-0 left-0 w-full h-full bg-menuImage flex flex-col justify-center items-center z-10'} style={{ backgroundSize: 'cover' }}>
+                {[...categories].map((category) => (
+
                     <Link className='pb-14' onClick={handleClickk} key={category.slug} href={`/category/${category.slug}`}>
                         <span className=' text-4xl align-middle bg-gray-900 bg-opacity-45 p-2 rounded-lg text-white font-bold cursor-pointer'>
                             {category.name}
