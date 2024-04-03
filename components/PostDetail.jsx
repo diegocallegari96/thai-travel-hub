@@ -12,13 +12,23 @@ const PostDetail = ({ post }) => {
     // console.log(index, text, obj, type);
     let modifiedText = text;
 
-    if (type == "class") {
+    if (type == "class" && obj.className == "gyg-widget") {
       const widget = obj.children[0].children[0].text;
 
       const locationId = widget.split("-")[0];
       const type = widget.split("-")[1];
 
       return getGYGWidget(locationId, type);
+    }
+
+    if (type == "class" && obj.className == "12go-widget") {
+      const widget = obj.children[0].children[0].text;
+
+      const origin = widget.split("-")[0];
+      const destination = widget.split("-")[1];
+      const caption = origin + " to " + destination;
+
+      return oneTwoGoWidget(origin, destination, caption);
     }
 
     if (obj) {
@@ -218,6 +228,29 @@ const PostDetail = ({ post }) => {
         data-gyg-excluded-tour-ids="430693" // add exlucded here separated by comma
         data-gyg-partner-id="1SPD11R"
       ></div>
+    );
+  };
+
+  const oneTwoGoWidget = (origin, destination, caption) => {
+    return (
+      <div className="py-4">
+        <script
+          src="//cdn0.trainbusferry.com/tools/form/en/?id=8642829&domain=12go.com"
+          data-one2go="8642829"
+          data-color="purple"
+          data-caption={caption}
+          data-origin={origin}
+          data-destination={destination}
+          data-language="en"
+          data-width="100%"
+          data-height="150"
+          data-border="1"
+          data-domain="12go.com"
+        ></script>
+        <div id="powered">
+          Powered by <a href="https://12go.com/?z=8642829">12Go system</a>
+        </div>
+      </div>
     );
   };
 
