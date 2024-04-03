@@ -1,8 +1,8 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import React from "react";
+import { useRouter } from "next/router";
 
-import { getCategories, getCategoryPost } from '../../services';
-import { PostCard, Categories, Loader } from '../../components';
+import { getCategories, getCategoryPost } from "../../services";
+import { PostCard, Categories, Loader } from "../../components";
 
 const CategoryPost = ({ posts }) => {
   const router = useRouter();
@@ -18,7 +18,9 @@ const CategoryPost = ({ posts }) => {
           {posts.length === 0 ? (
             <p>No posts in this category.</p>
           ) : (
-            posts.map((post) => <PostCard key={post.node.id} post={post.node} />)
+            posts.map((post, index) => (
+              <PostCard key={index} post={post.node} />
+            ))
           )}
         </div>
         <div className="col-span-1 lg:col-span-4">
