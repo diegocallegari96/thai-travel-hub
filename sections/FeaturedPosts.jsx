@@ -55,6 +55,7 @@ const FeaturedPosts = () => {
     <div className="mb-8">
       <Carousel 
         infinite 
+        rtl="false"
         customLeftArrow={customLeftArrow} 
         customRightArrow={customRightArrow} 
         responsive={responsive} 
