@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
 
 const PostDetail = ({ post }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const getContentFragment = (index, text, obj, type) => {
     // console.log(index, text, obj, type);
     let modifiedText = text;
 
     if (type == "class") {
-      const locationId = obj.children[0].children[0].text;
-      return getGYGWidget(locationId);
+      const widget = obj.children[0].children[0].text;
+      console.log(obj.children[0].children[0]);
+      // LocationId is part before - and type is part after -
+      const locationId = widget.split("-")[0];
+      const type = widget.split("-")[1];
+
+      return getGYGWidget(locationId, type);
     }
 
     if (obj) {
@@ -193,18 +204,23 @@ const PostDetail = ({ post }) => {
     }
   };
 
-  const getGYGWidget = (id) => {
+  const getGYGWidget = (id, type) => {
+    if (!isClient) {
+      return null;
+    }
+
     return (
       <div
-        data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
+        data-gyg-href={`https://widget.getyourguide.com/default/${type}.frame`}
         data-gyg-location-id={id}
         data-gyg-locale-code="en-US"
-        data-gyg-widget="activities"
+        data-gyg-widget={type}
         data-gyg-number-of-items="3"
+        data-gyg-excluded-tour-ids="430693"
         data-gyg-partner-id="1SPD11R"
       ></div>
     );
-  }
+  };
 
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
