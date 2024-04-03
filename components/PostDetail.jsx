@@ -14,8 +14,7 @@ const PostDetail = ({ post }) => {
 
     if (type == "class") {
       const widget = obj.children[0].children[0].text;
-      console.log(obj.children[0].children[0]);
-      // LocationId is part before - and type is part after -
+
       const locationId = widget.split("-")[0];
       const type = widget.split("-")[1];
 
