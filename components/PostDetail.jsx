@@ -215,7 +215,7 @@ const PostDetail = ({ post }) => {
         data-gyg-locale-code="en-US"
         data-gyg-widget={type}
         data-gyg-number-of-items="3"
-        data-gyg-excluded-tour-ids="430693"
+        data-gyg-excluded-tour-ids="430693" // add exlucded here separated by comma
         data-gyg-partner-id="1SPD11R"
       ></div>
     );
