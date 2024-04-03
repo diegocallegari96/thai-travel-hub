@@ -22,6 +22,7 @@ export const getPosts = async () => {
             title
             excerpt
             description
+            keyword
             featuredImage {
               url
             }
@@ -62,6 +63,7 @@ export const getPostDetails = async (slug) => {
         title
         excerpt
         description
+        keyword
         featuredImage {
           url
         }
@@ -166,6 +168,7 @@ export const getCategoryPost = async (slug) => {
             title
             excerpt
             description
+            keyword
             featuredImage {
               url
             }

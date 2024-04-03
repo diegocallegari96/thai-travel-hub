@@ -30,6 +30,7 @@ const Header = ({ post }) => {
         <link rel='icon' href='/thaihubicowit.svg' />
         <meta name='description' 
               content={post?.description || 'Explore the beauty and culture of Thailand with ThaiTravelHub. Your ultimate guide to discovering hidden gems, delicious cuisine, and unforgettable experiences across the Land of Smiles.'}/>
+        <meta name='keywords' content={post?.keyword || 'Thailand, travel, guide, culture, food, hidden gems, experiences'} />
         {/* Open Graph */}
         <meta property="og:title" 
               content={post?.title || "Discover Thailand's Wonders: Your Ultimate Guide"} />
