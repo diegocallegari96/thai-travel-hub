@@ -219,7 +219,7 @@ const PostDetail = ({ post }) => {
     }
 
     return (
-      <div
+      <div className="m-4"
         data-gyg-href={`https://widget.getyourguide.com/default/${type}.frame`}
         data-gyg-location-id={id}
         data-gyg-locale-code="en-US"
@@ -242,13 +242,13 @@ const PostDetail = ({ post }) => {
           data-origin={origin}
           data-destination={destination}
           data-language="en"
-          data-width="100%"
-          data-height="150"
+          data-width="full md:w-250"
+          data-height="320"
           data-border="1"
           data-domain="12go.com"
         ></script>
         <div id="powered">
-          Powered by <a href="https://12go.com/?z=8642829">12Go system</a>
+          {/* Powered by <a href="https://12go.com/?z=8642829">12Go system</a> */}
         </div>
       </div>
     );
