@@ -233,20 +233,20 @@ const PostDetail = ({ post }) => {
 
   const oneTwoGoWidget = (origin, destination, caption) => {
     return (
-      <div className="py-4">
-        <script
-          src="//cdn0.trainbusferry.com/tools/form/en/?id=8642829&domain=12go.com"
-          data-one2go="8642829"
-          data-color="purple"
-          data-caption={caption}
-          data-origin={origin}
-          data-destination={destination}
-          data-language="en"
-          data-width="full md:w-250"
-          data-height="320"
-          data-border="1"
-          data-domain="12go.com"
-        ></script>
+      <div className="flex py-4justify-center">
+          <script
+            src="//cdn0.trainbusferry.com/tools/form/en/?id=8642829&domain=12go.com"
+            data-one2go="8642829"
+            data-color="purple"
+            data-caption={caption}
+            data-origin={origin}
+            data-destination={destination}
+            data-language="en"
+            data-width="380"
+            data-height="320"
+            data-border="1"
+            data-domain="12go.com"
+          ></script>
         <div id="powered">
           {/* Powered by <a href="https://12go.com/?z=8642829">12Go system</a> */}
         </div>
