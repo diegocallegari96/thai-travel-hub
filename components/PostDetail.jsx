@@ -233,7 +233,8 @@ const PostDetail = ({ post }) => {
 
   const oneTwoGoWidget = (origin, destination, caption) => {
     return (
-      <div className="flex py-4justify-center">
+      <div className="py-4">
+        <div className="flex justify-center">
           <script
             src="//cdn0.trainbusferry.com/tools/form/en/?id=8642829&domain=12go.com"
             data-one2go="8642829"
@@ -247,6 +248,7 @@ const PostDetail = ({ post }) => {
             data-border="1"
             data-domain="12go.com"
           ></script>
+        </div>
         <div id="powered">
           {/* Powered by <a href="https://12go.com/?z=8642829">12Go system</a> */}
         </div>
