@@ -22,12 +22,20 @@ export default function Home({ posts }) {
           <div className="lg:sticky relative top-8">
             <PostWidget />
             <Categories />
+            <div className="rounded-lg"
+             data-gyg-href="https://widget.getyourguide.com/default/city.frame" 
+             data-gyg-location-id="169040" 
+             data-gyg-locale-code="en-US" 
+             data-gyg-widget="city" 
+             data-gyg-partner-id="1SPD11R">
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
