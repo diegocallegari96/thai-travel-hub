@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getCategories } from '../services'
 import Head from 'next/head'
 import { FaBars, FaTimes } from 'react-icons/fa';
+import Script from 'next/script';
 
 const Header = ({ post }) => {
     const [categories, setCategories] = useState([]);

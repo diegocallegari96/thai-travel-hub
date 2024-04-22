@@ -13,8 +13,8 @@ export default function Home({ posts }) {
           {posts
             .slice()
             .reverse()
-            .map((post) => (
-              <PostCard post={post.node} key={post.title} />
+            .map((post, index) => (
+              <PostCard post={post.node} key={index} />
             ))}
         </div>
 
