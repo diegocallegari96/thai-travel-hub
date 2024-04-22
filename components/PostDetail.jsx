@@ -234,9 +234,6 @@ const PostDetail = ({ post }) => {
   };
 
   const oneTwoGoWidget = (origin, destination, caption) => {
-    if (!isClient) {
-      return null;
-    }
     console.log(origin, destination, caption);
 
     return (
