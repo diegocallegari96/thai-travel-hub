@@ -234,9 +234,6 @@ const PostDetail = ({ post }) => {
   };
 
   const oneTwoGoWidget = (origin, destination, caption) => {
-    if (!isClient) {
-      return null;
-    }
     console.log(origin, destination, caption);
 
     return (
@@ -310,8 +307,8 @@ const PostDetail = ({ post }) => {
             getContentFragment(itemIndex, item.text, item)
           );
 
-          return getContentFragment(index, children, typeObj, typeObj.type);
-        })}
+          return <React.Fragment key={index}>{getContentFragment(index, children, typeObj, typeObj.type)}</React.Fragment>;
+                  })}
       </div>
     </div>
   );
