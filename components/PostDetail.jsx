@@ -12,17 +12,17 @@ const PostDetail = ({ post }) => {
     // console.log(index, text, obj, type);
     let modifiedText = text;
 
-    if (type === "class" && obj.className === "gyg-widget") {
+    if (type == "class" && obj.className == "gyg-widget") {
       const widget = obj.children[0].children[0].text;
 
       const locationId = widget.split("-")[0];
-      const widgetType = widget.split("-")[1];
+      const type = widget.split("-")[1];
       const ids = widget.split("-")[2];
 
-      return getGYGWidget(locationId, widgetType, ids);
+      return getGYGWidget(locationId, type, ids);
     }
 
-    if (type === "class" && obj.className === "12go-widget") {
+    if (type == "class" && obj.className == "12go-widget") {
       const widget = obj.children[0].children[0].text;
 
       const origin = widget.split("-")[0];
@@ -111,6 +111,14 @@ const PostDetail = ({ post }) => {
               : modifiedText}
           </p>
         );
+      case "heading-four":
+        return (
+          <h4 key={index} className="text-md font-semibold mb-4">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </h4>
+        );
       case "image":
         return (
           <img
@@ -162,7 +170,7 @@ const PostDetail = ({ post }) => {
 
       case "numbered-list":
         return (
-          <ol key={index} className="mb-8">
+          <ul key={index} className="mb-8">
             {obj.children &&
               obj.children.map((listItem, i) => (
                 <li key={i} className="list-item-child list-decimal ml-8">
@@ -189,16 +197,16 @@ const PostDetail = ({ post }) => {
                     ))}
                 </li>
               ))}
-          </ol>
+          </ul>
         );
 
       case "link":
         return (
-          <a key={index} className="text-md font-semibold mb-4">
+          <link key={index} className="text-md font-semibold mb-4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
-          </a>
+          </link>
         );
 
       default:
@@ -226,10 +234,10 @@ const PostDetail = ({ post }) => {
   };
 
   const oneTwoGoWidget = (origin, destination, caption) => {
-    console.log(origin, destination, caption);
     if (!isClient) {
       return null;
     }
+    console.log(origin, destination, caption);
 
     return (
       <div className="py-4">
@@ -303,7 +311,7 @@ const PostDetail = ({ post }) => {
           );
 
           return <React.Fragment key={index}>{getContentFragment(index, children, typeObj, typeObj.type)}</React.Fragment>;
-        })}
+                  })}
       </div>
     </div>
   );
