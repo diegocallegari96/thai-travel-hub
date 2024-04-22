@@ -17,8 +17,9 @@ const PostDetail = ({ post }) => {
 
       const locationId = widget.split("-")[0];
       const type = widget.split("-")[1];
+      const ids = widget.split("-")[2];
 
-      return getGYGWidget(locationId, type);
+      return getGYGWidget(locationId, type, ids);
     }
 
     if (type == "class" && obj.className == "12go-widget") {
@@ -213,7 +214,7 @@ const PostDetail = ({ post }) => {
     }
   };
 
-  const getGYGWidget = (id, type) => {
+  const getGYGWidget = (id, type, ids) => {
     if (!isClient) {
       return null;
     }
@@ -226,6 +227,7 @@ const PostDetail = ({ post }) => {
         data-gyg-widget={type}
         data-gyg-number-of-items="3"
         data-gyg-excluded-tour-ids="430693" // add exlucded here separated by comma
+        data-gyg-tour-ids={ids}
         data-gyg-partner-id="1SPD11R"
       ></div>
     );
