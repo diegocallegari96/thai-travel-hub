@@ -26,6 +26,13 @@ const CategoryPost = ({ posts }) => {
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
             <Categories />
+            <div className="rounded-lg"
+             data-gyg-href="https://widget.getyourguide.com/default/city.frame" 
+             data-gyg-location-id="169040" 
+             data-gyg-locale-code="en-US" 
+             data-gyg-widget="city" 
+             data-gyg-partner-id="1SPD11R">
+            </div>
           </div>
         </div>
       </div>
