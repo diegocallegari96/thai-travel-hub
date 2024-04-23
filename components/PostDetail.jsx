@@ -3,6 +3,7 @@ import moment from "moment";
 
 const PostDetail = ({ post }) => {
   const [isClient, setIsClient] = useState(false);
+  console.log(post.content);
 
   useEffect(() => {
     setIsClient(true);
