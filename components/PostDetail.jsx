@@ -33,6 +33,37 @@ const PostDetail = ({ post }) => {
       return oneTwoGoWidget(origin, destination, caption);
     }
 
+    
+    function renderList(obj, index = 0, type = 'disc') {
+      if (!obj.children) {
+        return <div></div>;
+      }
+    
+      return (
+        <ul key={index} className="mb-8">
+          {obj.children.map((listItem, i) => (
+            <li key={i} className={`list-item-child ml-8 list-${type}`}>
+              {listItem.children && listItem.children.map((child, childIndex) => (
+                <React.Fragment key={childIndex}>
+                  {console.log(child.type)}
+                  {child.type === 'text' ? (
+                    getContentFragment(
+                      childIndex,
+                      child.text,
+                      child,
+                      child.type
+                    )
+                  ) : (
+                    renderList(child, childIndex, type)
+                  )}
+                </React.Fragment>
+              ))}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
     if (obj) {
       if (obj.bold) {
         modifiedText = <b key={index}>{text}</b>;
@@ -142,32 +173,8 @@ const PostDetail = ({ post }) => {
           />
         );
 
-      case "bulleted-list":
-        return (
-          <ul key={index} className="mb-8">
-            {obj.children &&
-              obj.children.map((listItem, i) => (
-                <li key={i} className="list-item-child list-disc ml-8">
-                  {listItem.children &&
-                    listItem.children.map((child, childIndex) => (
-                      <React.Fragment key={childIndex}>
-                        {child.children &&
-                          child.children.map((textItem, textIndex) => (
-                            <React.Fragment key={textIndex}>
-                              {getContentFragment(
-                                textIndex,
-                                textItem.text,
-                                textItem,
-                                textItem.type
-                              )}
-                            </React.Fragment>
-                          ))}
-                      </React.Fragment>
-                    ))}
-                </li>
-              ))}
-          </ul>
-        );
+        case "bulleted-list":
+          renderList(obj, index);
 
       case "numbered-list":
         return (
