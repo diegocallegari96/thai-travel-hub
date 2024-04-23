@@ -18,7 +18,7 @@ const CategoryPost = ({ posts }) => {
           {posts.length === 0 ? (
             <p>No posts in this category.</p>
           ) : (
-            posts.map((post, index) => (
+            posts.reverse().map((post, index) => (
               <PostCard key={index} post={post.node} />
             ))
           )}
