@@ -3,7 +3,7 @@ import moment from "moment";
 
 const PostDetail = ({ post }) => {
   const [isClient, setIsClient] = useState(false);
-  console.log(post.content);
+  // console.log(post.content);
 
   useEffect(() => {
     setIsClient(true);
@@ -242,7 +242,7 @@ const PostDetail = ({ post }) => {
   };
 
   const oneTwoGoWidget = (origin, destination, caption) => {
-    console.log(origin, destination, caption);
+    // console.log(origin, destination, caption);
 
     return (
       <div className="py-4">

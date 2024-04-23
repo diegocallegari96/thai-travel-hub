@@ -18,7 +18,7 @@ export default async function comments(req, res) {
     }
   `;
 
-  console.log('Raw Request Body:', req.body);
+  // console.log('Raw Request Body:', req.body);
   try {
     const result = await graphQLClient.request(query, req.body);
 
