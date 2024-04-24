@@ -156,13 +156,13 @@ const PostDetail = ({ post }) => {
         );
       case "iframe":
         return (
-          <iframe
-            key={index}
-            height={obj.height}
-            width={obj.width}
-            src={obj.url}
-            className="pb-4 sm:width-250"
-          />
+          <div key={index} className="pb-4 sm:width-250">
+            <iframe
+              height={obj.height}
+              width={obj.width}
+              src={obj.url}
+            />
+          </div>
         );
 
         case "bulleted-list":
@@ -202,11 +202,11 @@ const PostDetail = ({ post }) => {
 
       case "link":
         return (
-          <link key={index} className="text-md font-semibold mb-4">
+          <a key={index} className="text-md font-semibold mb-4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
-          </link>
+          </a>
         );
 
       default:
@@ -234,6 +234,9 @@ const PostDetail = ({ post }) => {
   };
 
   const oneTwoGoWidget = (origin, destination, caption) => {
+    if (!isClient) {
+      return null;
+    }
     // console.log(origin, destination, caption);
 
     return (
