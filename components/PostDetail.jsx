@@ -143,14 +143,6 @@ const PostDetail = ({ post }) => {
               : modifiedText}
           </p>
         );
-      case "heading-four":
-        return (
-          <h4 key={index} className="text-md font-semibold mb-4">
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h4>
-        );
       case "image":
         return (
           <img
