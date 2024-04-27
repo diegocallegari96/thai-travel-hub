@@ -156,10 +156,10 @@ const PostDetail = ({ post }) => {
         );
       case "iframe":
         return (
-          <div key={index} className="pb-4 sm:width-250">
+          <div key={index} className="flex justify-center pb-4">
             <iframe
-              height={obj.height}
-              width={obj.width}
+              height={`100%`}
+              width={`100%`}
               src={obj.url}
             />
           </div>
