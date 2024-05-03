@@ -83,6 +83,8 @@ export const getPostDetails = async (slug) => {
           name
           slug
         }
+        contentMarkdown
+        
       }
     }
   `;

@@ -3,14 +3,14 @@ import moment from "moment";
 
 const PostDetail = ({ post }) => {
   const [isClient, setIsClient] = useState(false);
-  // console.log(post.content);
+  
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
   const getContentFragment = (index, text, obj, type) => {
-    // console.log(index, text, obj, type);
+    
     let modifiedText = text;
 
     if (type == "class" && obj.className == "gyg-widget") {
@@ -218,6 +218,8 @@ const PostDetail = ({ post }) => {
     if (!isClient) {
       return null;
     }
+
+    console.log(post)
 
     return (
       <div className="m-4"
