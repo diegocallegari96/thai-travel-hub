@@ -76,6 +76,7 @@ export const getPostDetails = async (slug) => {
         }
         createdAt
         slug
+        contentMarkdown
         content {
           raw
         }
@@ -83,8 +84,6 @@ export const getPostDetails = async (slug) => {
           name
           slug
         }
-        contentMarkdown
-        
       }
     }
   `;
