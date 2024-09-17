@@ -45,7 +45,7 @@ const PostDetail = ({ post }) => {
             <li key={i} className={`list-item-child ml-8 list-${type}`}>
               {listItem.children && listItem.children.map((child, childIndex) => (
                 <React.Fragment key={childIndex}>
-                  {console.log(child.type)}
+                  {/* {console.log(child.type)} */}
                   {child.type === 'text' ? (
                     getContentFragment(
                       childIndex,
@@ -264,6 +264,7 @@ const PostDetail = ({ post }) => {
       </div>
     );
   };
+  console.log(post)
 
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
@@ -307,7 +308,7 @@ const PostDetail = ({ post }) => {
           </div>
         </div>
         <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
-        {post.content.raw.children.map((typeObj, index) => {
+        {post.contentMarkdown => {
           const children = typeObj.children.map((item, itemIndex) =>
             getContentFragment(itemIndex, item.text, item)
           );
