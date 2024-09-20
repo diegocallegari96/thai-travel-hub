@@ -24,7 +24,7 @@ const PostDetails = ({ post }) => {
         </div>
         
         {/* Sidebar widget */}
-        <div className="col-span-1 lg:col-span-4 w-full">
+        <div className="col-span-1 lg:col-span-4 w-full lg:pr-10">
           <div className="relative lg:sticky top-8">
             <PostWidget slug={post.slug} categories={post.categories.map((category) => category.slug)} />
             <Categories />
