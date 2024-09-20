@@ -239,7 +239,7 @@ const PostDetail = ({ post }) => {
     if (!isClient) {
       return null;
     }
-    // console.log(origin, destination, caption);
+    console.log(origin, destination, caption);
 
     return (
       <div className="py-4">
