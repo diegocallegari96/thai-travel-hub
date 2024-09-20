@@ -82,7 +82,7 @@ const PostDetail = ({ post }) => {
       return (
         <a
           key={index}
-          className="text-md font-semibold mb-4 cursor-pointer text-purple-700 hover:underline"
+          className="text-md font-semibold mb-4 cursor-pointer text-blue-700 hover:text-purple-700 hover:underline"
           href={obj.href}
           target="_blank"
           rel="noopener noreferrer"
