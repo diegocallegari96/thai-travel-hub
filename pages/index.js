@@ -34,8 +34,8 @@ export default function Home({ posts }) {
 
   return (
     <div className="w-full mx-0 px-0 mb-8">
+      <FeaturedPosts className="w-full" />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <FeaturedPosts className="w-full" />
         <div className="col-span-1 lg:col-span-8 w-full px-0 lg:px-10">
           {/* Centering the search bar */}
           <div className="flex justify-center my-8">
