@@ -1,28 +1,31 @@
 import React from 'react';
 import moment from 'moment';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const FeaturedPostCard = ({ post }) => (
-  <div className="flex relative h-72">
-    <div className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72" style={{ backgroundImage: `url('${post.featuredImage.url}')` }} />
-    <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72" />
-    <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
-      <p className="text-white mb-4 text-shadow font-semibold text-1xl text-center">{post.title}</p>
-      <p className="text-white mb-4 text-shadow font-semibold text-xs">{moment(post.createdAt).format('MMM DD, YYYY')}</p>
-      <div className="flex items-center absolute bottom-5 w-full justify-center">
-        {/* <Image
-          unoptimized
-          alt={post.author.name}
-          height="30"
-          width="30"
-          className="align-middle drop-shadow-lg"
-          src={post.author.photo.url}
-        /> */}
-        {/* <p className="inline align-middle text-white text-shadow ml-2 font-medium">{post.author.name}</p> */}
-      </div>
+  <div className="relative h-72 sm:h-80 md:h-96 lg:h-100 xl:h-120 mb-8">
+    {/* Background image with proper styling */}
+    <div
+      className="absolute inset-0 rounded-lg bg-center bg-cover bg-no-repeat shadow-lg transition-transform transform hover:scale-105 duration-500"
+      style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
+    />
+    {/* Gradient overlay */}
+    <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-gray-400 via-gray-700 to-black opacity-75" />
+
+    {/* Post Content */}
+    <div className="relative z-10 flex flex-col items-center justify-center h-full p-4 text-center">
+      <h2 className="text-white text-2xl md:text-3xl font-bold mb-4 text-shadow">
+        {post.title}
+      </h2>
+      <p className="text-white text-sm md:text-md font-semibold mb-4 text-shadow">
+        {moment(post.createdAt).format('MMM DD, YYYY')}
+      </p>
     </div>
-    <Link href={`/post/${post.slug}`}><span className="cursor-pointer absolute w-full h-full" /></Link>
+
+    {/* Link to post */}
+    <Link href={`/post/${post.slug}`}>
+      <a className="absolute inset-0 z-20 cursor-pointer" aria-label={post.title} />
+    </Link>
   </div>
 );
 
