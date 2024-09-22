@@ -34,16 +34,17 @@ export default function Home({ posts }) {
 
   return (
     <div className="w-full mx-0 px-0 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
       <FeaturedPosts className="w-full" />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div className="col-span-1 lg:col-span-8 w-full px-0 lg:px-10">
-            <div className="flex justify-left my-8">
+        <div className="col-span-1 lg:col-span-8 w-full px-0 lg:px-10">
+          {/* Centering the search bar */}
+          <div className="flex justify-center my-8">
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)} // Update search term
               placeholder="Search posts..."
-              className="px-4 py-2 border border-gray-300 rounded-md w-full lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="px-4 py-2 border border-gray-300 rounded-md w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
           {/* Display filtered posts */}
