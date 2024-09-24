@@ -34,19 +34,21 @@ export default function Home({ posts }) {
 
   return (
     <div className="w-full mx-0 px-0 mb-8">
-      <FeaturedPosts className="w-full" />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="col-span-1 lg:col-span-8 w-full px-0 lg:px-10">
-          {/* Centering the search bar */}
-          <div className="flex justify-center my-8">
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)} // Update search term
-              placeholder="Search posts..."
-              className="px-4 py-2 border border-gray-300 rounded-md w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
+          {/* New div for search bar with white background */}
+          <div className="bg-white p-6 mb-4 rounded-lg shadow-lg">
+            <div className="flex justify-center">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)} // Update search term
+                placeholder="Search..."
+                className="px-4 py-2 border border-gray-300 rounded-md w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
           </div>
+
           {/* Display filtered posts */}
           {selectedPosts.map((post, index) => (
             <PostCard post={post.node} key={index} />
@@ -75,7 +77,6 @@ export default function Home({ posts }) {
               </button>
             </div>
           </div>
-
         </div>
 
         <div className="col-span-1 lg:col-span-4 w-full px-0 lg:px-10">
