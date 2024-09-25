@@ -47,7 +47,7 @@ export default function Home({ posts }) {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)} // Update search term
-                placeholder="Search titles..."
+                placeholder="Search Posts..."
                 className="px-4 py-2 w-full focus:outline-none focus:ring-0"
               />
               <button
