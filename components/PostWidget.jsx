@@ -17,23 +17,23 @@ const PostWidget = ({ categories, slug }) => {
   }, [slug]);
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
+    <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 mb-8">
+      <h3 className="text-xl mb-6 sm:mb-8 font-semibold border-b pb-2 sm:pb-4">
         {slug ? 'Related Posts' : 'Featured Posts'}
       </h3>
       {relatedPosts.slice().reverse().map((post) => (
         <div key={post.title} className="flex items-center w-full mb-4">
-          <div className="w-16 flex-none">
+          <div className="w-12 sm:w-16 flex-none">
             <img
               alt={post.title}
-              height="60px"
-              width="60px"
+              height="48px"
+              width="48px"
               className="align-middle rounded-full"
               src={post.featuredImage.url}
             />
           </div>
-          <div className="flex-grow ml-4">
-            <Link href={`/post/${post.slug}`} key={post.title} className="text-md">
+          <div className="flex-grow ml-3 sm:ml-4">
+            <Link href={`/post/${post.slug}`} key={post.title} className="text-sm sm:text-md text-gray-800 hover:text-blue-500">
               {post.title}
             </Link>
           </div>
