@@ -12,10 +12,9 @@ export default function Home({ posts }) {
   // Reverse the posts array so the latest posts appear first
   const reversedPosts = posts.slice().reverse();
 
-  // Filter posts based on the search term
+  // Filter posts based on the search term, only looking at titles (H1 equivalent)
   const filteredPosts = reversedPosts.filter((post) => 
-    post.node.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.node.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+    post.node.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Determine the current page from query params
@@ -48,7 +47,7 @@ export default function Home({ posts }) {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)} // Update search term
-                placeholder="Search posts..."
+                placeholder="Search titles..."
                 className="px-4 py-2 w-full focus:outline-none focus:ring-0"
               />
               <button
@@ -110,7 +109,6 @@ export default function Home({ posts }) {
     </div>
   );
 }
-
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
