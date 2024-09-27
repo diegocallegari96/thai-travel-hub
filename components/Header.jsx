@@ -45,7 +45,7 @@ const Header = ({ post }) => {
         <meta property="og:site_name" content="Thai Travel Hub" /> {/* Added og:site_name */}      
         {/* Twitter */}      
         <meta name="twitter:card" 
-              content={post?.featuredImage.url || '/thaihubicowit.svg'} />
+              content="summary_large_image" />
         <meta name="twitter:title" 
               content={post?.title || "Discover Thailand's Wonders: Your Ultimate Guide"} />
         <meta name="twitter:description" 
