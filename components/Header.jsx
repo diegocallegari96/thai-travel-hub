@@ -41,6 +41,8 @@ const Header = ({ post }) => {
               content={post?.featuredImage.url || '/thaihubicowit.svg'} /> 
         <meta property="og:url" 
               content={`https://thaitravelhub.com/post/${post?.slug}` || `https://thaitravelhub.com/`} />
+        <meta property="og:type" content="article" /> {/* Added og:type */}
+        <meta property="og:site_name" content="Thai Travel Hub" /> {/* Added og:site_name */}      
         {/* Twitter */}      
         <meta name="twitter:card" 
               content={post?.featuredImage.url || '/thaihubicowit.svg'} />
